@@ -69,7 +69,8 @@
 
         a:hover { text-decoration-thickness: 2px; }
 
-        a:focus-visible {
+        a:focus-visible,
+        summary:focus-visible {
             outline: 2px solid var(--text);
             outline-offset: 3px;
         }
@@ -105,9 +106,22 @@
 
         .muted { color: var(--muted); }
 
+        /* ---------- Lab members ---------- */
         .member {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
             margin-bottom: 28px;
         }
+
+        .member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;   /* crops any photo to a square without distortion */
+            flex-shrink: 0;
+        }
+
+        .member-text { flex: 1; }
 
         .member h3 {
             margin: 0;
@@ -119,6 +133,13 @@
             font-size: 0.95rem;
         }
 
+        details summary {
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            margin-bottom: 12px;
+        }
+
         footer {
             border-top: 1px solid var(--rule);
             padding-top: 12px;
@@ -128,6 +149,7 @@
 
         @media (max-width: 480px) {
             body { margin: 40px auto; }
+            .member { flex-direction: column; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -166,9 +188,17 @@
             <h2>Lab members</h2>
 
             <div class="member">
-                <h3>Principal investigator</h3>
-                <p class="role">Ian Boys</p>
-                <p>Bio to be filled out.</p>
+                <img src="images/ian-boys.jpg" alt="Ian Boys" width="120" height="120">
+                <div class="member-text">
+                    <h3>Ian Boys</h3>
+                    <p class="role">Principal Investigator</p>
+                    <p>Short bio.</p>
+                    <details>
+                        <summary>Read more</summary>
+                        <p>Extended bio.</p>
+                        <p>Some stuff about life outside of lab, bla bla.</p>
+                    </details>
+                </div>
             </div>
 
             <h3>Join us</h3>
@@ -196,7 +226,7 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>
-                Placeholder.
+                Contact info coming soon.
             </p>
         </section>
     </main>
