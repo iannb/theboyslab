@@ -102,13 +102,26 @@
         p {
             font-size: 1.05rem;
             text-align: justify;
-            text-justify: inter-word; 
-            /* hyphens: auto; */
-            text-wrap: pretty; 
+            text-justify: inter-word;
+            hyphens: auto;
+            text-wrap: pretty;
             margin: 0 0 16px;
         }
 
         .muted { color: var(--muted); }
+
+        /* ---------- Research figure (floats right on desktop) ---------- */
+        #research {
+            display: flow-root;   /* keeps the floated figure inside the section */
+        }
+
+        .figure-right {
+            float: right;
+            width: 300px;
+            max-width: 45%;
+            height: auto;
+            margin: 4px 0 12px 20px;
+        }
 
         /* ---------- Lab members ---------- */
         .member {
@@ -124,7 +137,7 @@
             object-fit: cover;   /* crops any photo to a square without distortion */
             flex-shrink: 0;
         }
-        
+
         .member-text { flex: 1; }
 
         .member h3 {
@@ -151,8 +164,23 @@
             color: var(--muted);
         }
 
+        /* ---------- Small screens ---------- */
         @media (max-width: 480px) {
             body { margin: 40px auto; }
+
+            /* Justified text leaves big word gaps in narrow columns */
+            p { text-align: left; }
+
+            /* Stack the research figure above the text instead of floating */
+            .figure-right {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 16px;
+            }
+
+            /* Stack member photo above the bio */
             .member { flex-direction: column; }
         }
 
@@ -182,7 +210,8 @@
             <h2>Our research</h2>
             <!-- PLACEHOLDER: replace with your own research summary -->
             <p>
-                <img src="images/research_fig1.jpg" alt="Research overview" style="float: right; margin-left: 5px; width: 300px; height: auto;">
+                <!-- Tip: make the alt text describe what the figure shows -->
+                <img class="figure-right" src="images/research_fig1.jpg" alt="Research overview">
                 We study how different animals have adapted to cope with viral infections. While mammals, reptiles, and other vertebrates share a similar set of "building blocks" of immune genes, each species holds unique ways that these blocks have been assembled and modified over evolutionary time to protect the host. We use genetic screens, functional genomics, and classic virology to uncover these new mechanisms as ways to learn about evolution, virology, and cell biology. 
             </p>
 
@@ -201,7 +230,7 @@
                     <details>
                         <summary>Read more</summary>
                         <p>Ian is a virologist and evolutionary geneticist who studies immune diversity to uncover new ways to block viral infection. He studied bacteriophages as an undergrad at Baylor University and antiviral immunity in bats as a grad student at UTSW. As a postdoc in the Department of Human Genetics at the University of Utah, he studied molecular mimicry/anti-immune mechanisms in poxviruses and antiviral immunity in lizards. </p>
-                        <p>Outside of the lab, Ian splits his time between the outdoors and being a nerd. He enjoys hiking, camping, cycling, and running, as well as board games and MTG. He's also an amateur photographer, a relapsing cellist, and an avid cook. </p>
+                        <p>Outside of the lab, Ian splits his time between the outdoors and being a nerd. He enjoys hiking, camping, cycling, and running, as well as board games and MTG. He's also a relapsing cellist and avid cook. </p>
                     </details>
                 </div>
             </div>
