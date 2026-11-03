@@ -4,35 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Boys Lab</title>
-    
-    <!-- Prevents search engines and bots from archiving or indexing this placeholder page -->
+    <meta name="description" content="The Boys Lab studies the evolution of antiviral immunity.">
+
+    <!-- Prevents search engines and bots from archiving or indexing this page.
+         DELETE this line when you are ready to launch publicly. -->
     <meta name="robots" content="noindex, nofollow">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --muted: #555555;
+            --rule: #000000;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
+        }
+
         body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: "Montserrat";
-            max-width: 600px;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+            max-width: 680px;
             margin: 80px auto;
             padding: 0 20px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
+
         header {
-            border-bottom: 1px solid #000000;
-            padding-bottom: 5px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 8px;
             margin-bottom: 20px;
         }
+
         h1 {
             font-size: 1.8rem;
-            font-weight: normal;
+            font-weight: 400;
             margin: 0;
         }
-        p {
-            font-size: 1.1rem;
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 24px;
+            margin-bottom: 56px;
         }
-        .status {
-            color: #555555;
+
+        nav a {
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--text);
+            text-underline-offset: 3px;
+        }
+
+        a:hover { text-decoration-thickness: 2px; }
+
+        a:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 3px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin: 0 0 72px;
+        }
+
+        section {
+            margin-bottom: 64px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 0 0 16px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin: 28px 0 4px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin: 0 0 16px;
+        }
+
+        .muted { color: var(--muted); }
+
+        .member {
+            margin-bottom: 28px;
+        }
+
+        .member h3 {
+            margin: 0;
+        }
+
+        .member .role {
+            color: var(--muted);
+            margin: 0 0 6px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--rule);
+            padding-top: 12px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 480px) {
+            body { margin: 40px auto; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
@@ -41,11 +140,70 @@
     <header>
         <h1>The Boys Lab</h1>
     </header>
+
+    <nav aria-label="Main">
+        <a href="#research">Our research</a>
+        <a href="#members">Lab members</a>
+        <a href="#publications">Publications</a>
+        <!-- <a href="#fun">Fun</a> -->
+        <a href="#contact">Contact</a>
+    </nav>
+
     <main>
-        <p class="status">Evolutionary antiviral immunity. Currently incubating in SLC, coming soon to the PNW and beyond.</p>
-        <br>
-        <br>
-        <a href="https://scholar.google.com/citations?user=5vpcI8EAAAAJ&hl=en">Publications</a>
+        <p class="tagline">Evolutionary antiviral immunity. Currently incubating in SLC, coming soon to the PNW and beyond.</p>
+
+        <section id="research">
+            <h2>Our research</h2>
+            <!-- PLACEHOLDER: replace with your own research summary -->
+            <p>
+                We study how different lineages of animals have adapted to cope with viral infections. While mammals, reptiles, and other vertebrates share a similar set of "building blocks" of immune genes, each species holds unique ways that these blocks have been assembled over evolutionary time to protect the host. We use genetic screens, functional genomics, and classic virology to uncover these new mechanisms as ways to learn about evolution, virology, and cell biology. 
+            </p>
+
+        
+        </section>
+
+        <section id="members">
+            <h2>Lab members</h2>
+
+            <div class="member">
+                <h3>Principal investigator name</h3>
+                <p class="role">Ian Boys</p>
+                <p>Bio to be filled out.</p>
+            </div>
+
+            <h3>Join us</h3>
+            <p>
+                We will be recruiting soon.
+            </p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>
+                The full, current list is on
+                <a href="https://scholar.google.com/citations?user=5vpcI8EAAAAJ&amp;hl=en">Google Scholar</a>.
+            </p>
+            <!-- OPTIONAL: later, add a hand-curated "Selected publications" list here -->
+        </section>
+
+        <!--
+        <section id="fun">
+            <h2>Fun</h2>
+            <p>Lab photos, hikes, recipes, whatever you like.</p>
+        </section>
+        -->
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Placeholder.
+            </p>
+        </section>
     </main>
+
+    <footer>
+        &copy; 2026 The Boys Lab
+    </footer>
+
 </body>
 </html>
