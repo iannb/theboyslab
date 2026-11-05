@@ -71,7 +71,7 @@
         /* ---------- Gallery grid ---------- */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, 1fr);  
             gap: 16px;
         }
 
@@ -82,7 +82,8 @@
         .gallery img {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;       /* uniform tiles; the full photo opens on click */
+            height: auto;             
+            aspect-ratio: 4 / 3;
             object-fit: cover;
         }
 
